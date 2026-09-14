@@ -49,4 +49,23 @@
     item.classList.add('flash');
     window.setTimeout(() => item.classList.remove('flash'), 1400);
   });
+
+  const sisterHref = 'internalisierendes-verhalten.html';
+  const internalisingCard = [...document.querySelectorAll('.behavior-types article')]
+    .find((card) => card.querySelector('h3')?.textContent.trim() === 'Internalisierend');
+  if (internalisingCard && !internalisingCard.querySelector(`a[href="${sisterHref}"]`)) {
+    const link = document.createElement('a');
+    link.className = 'button small';
+    link.href = sisterHref;
+    link.textContent = 'Internalisierend vertiefen →';
+    internalisingCard.append(link);
+  }
+
+  const nav = document.querySelector('.topnav .nav-inner');
+  if (nav && !nav.querySelector(`a[href="${sisterHref}"]`)) {
+    const link = document.createElement('a');
+    link.href = sisterHref;
+    link.textContent = 'Internalisierend';
+    nav.append(link);
+  }
 })();
