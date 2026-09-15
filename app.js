@@ -116,10 +116,11 @@
   // Quizbedienung + lokaler Lernstand. Es werden keine Daten versendet.
   const quizControls = document.querySelector('.quiz-controls');
   let seen = new Set();
+  let printing = false;
   const storageKey = `klausurkompass:quiz-seen:${location.pathname}`;
   try {
     const stored = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    seen = new Set(stored.filter((value) => Number.isInteger(value)));
+    seen = new Set(stored.filter((value) => Number.isInteger(value) && value >= 0 && value < quizItems.length));
   } catch (_) { /* localStorage ist optional */ }
 
   const quizProgress = document.createElement('p');
@@ -137,7 +138,7 @@
 
   quizItems.forEach((item, index) => {
     item.addEventListener('toggle', () => {
-      if (item.open) {
+      if (item.open && !printing) {
         seen.add(index);
         updateQuizProgress();
       }
@@ -198,10 +199,12 @@
   let detailsBeforePrint = [];
   const allDetails = [...document.querySelectorAll('details')];
   window.addEventListener('beforeprint', () => {
+    printing = true;
     detailsBeforePrint = allDetails.map((item) => item.open);
     allDetails.forEach((item) => { item.open = true; });
   });
   window.addEventListener('afterprint', () => {
     allDetails.forEach((item, index) => { item.open = detailsBeforePrint[index] ?? item.open; });
+    printing = false;
   });
 })();
