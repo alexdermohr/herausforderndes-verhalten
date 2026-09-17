@@ -47,6 +47,48 @@
     toolbar.insertAdjacentElement('afterend', launchpad);
   }
 
+  // Theoriepräzisierung: Grawe-Kernmodell von der pädagogischen Nollau-Adaption trennen.
+  const basics = document.querySelector('#grundlagen');
+  const needGrid = basics?.querySelector('.need-grid');
+  if (basics && needGrid && !needGrid.dataset.grawePrecise) {
+    needGrid.dataset.grawePrecise = 'true';
+    const needHeading = [...basics.querySelectorAll('.subhead')]
+      .find((heading) => heading.textContent.includes('Grundbedürfnisse'));
+    if (needHeading) needHeading.textContent = 'Grawe-Kernmodell und Nollau-Adaption';
+
+    needGrid.innerHTML = `
+      <div class="need"><strong>Bindung / Anschluss</strong><span>Grawe · Zugehörigkeit und verlässliche Beziehung</span></div>
+      <div class="need"><strong>Orientierung & Kontrolle</strong><span>Grawe · verstehen, vorhersehen, beeinflussen</span></div>
+      <div class="need"><strong>Selbstwert</strong><span>Grawe · Selbstwerterhöhung und Selbstwertschutz</span></div>
+      <div class="need"><strong>Lust / Unlustvermeidung</strong><span>Grawe · angenehme Zustände fördern, belastende vermindern</span></div>
+      <div class="need"><strong>Autonomie</strong><span>Nollau-Adaption · Selbstbestimmung</span></div>
+      <div class="need"><strong>Kompetenz</strong><span>Nollau-Adaption · Selbstwirksamkeit</span></div>`;
+
+    const precision = document.createElement('aside');
+    precision.className = 'notice';
+    precision.innerHTML = `<strong>Grawe präzise:</strong> Im Kernmodell nennt Grawe vier Grundbedürfnisse. Individuell entwickeln sich daraus <strong>motivationale Schemata</strong> mit Annäherungs- und Vermeidungszielen. <strong>Diskordanz</strong> bedeutet: gleichzeitig aktivierte Ziele blockieren sich (Ziel ↔ Ziel). <strong>Inkongruenz</strong> bedeutet: ein aktiviertes Ziel wird in der wahrgenommenen Realität nicht erreicht (Ziel ↔ Wirklichkeit). Beide sind wichtige Formen von Inkonsistenz. <a href="internalisierendes-verhalten.html#grawe">Mit internalisierendem Verhalten durchspielen →</a>`;
+    needGrid.insertAdjacentElement('afterend', precision);
+
+    basics.dataset.search = `${basics.dataset.search || ''} konsistenz inkonsistenz diskordanz inkongruenz motivationale schemata annaäherung annäherung vermeidung`;
+  }
+
+  // Internalisiertes Verhalten auf der Hauptseite mit den Erkenntnissen der Schwerpunktseite schärfen.
+  const internalisingCard = [...document.querySelectorAll('.behavior-types article')]
+    .find((card) => card.querySelector('h3')?.textContent.trim() === 'Internalisierend');
+  if (internalisingCard && !internalisingCard.querySelector('.internalising-focus')) {
+    const focus = document.createElement('div');
+    focus.className = 'internalising-focus';
+    focus.innerHTML = `<p><strong>Prüfungsfokus:</strong> Rückzug oder Überanpassung können kurzfristig ein Vermeidungsziel sichern, obwohl Annäherungsziele wie Zugehörigkeit, Beteiligung oder Kompetenz unerreicht bleiben. Prüfe: <em>Welches Annäherungsziel? Welches Vermeidungsziel? Diskordanz? Inkongruenz?</em></p><p class="muted">Wichtig: Rückzug ist ein Hinweis, kein Beweis für internalisierendes Verhalten.</p>`;
+    internalisingCard.append(focus);
+  }
+
+  // Die zentrale Quizfrage zum Konsistenzmodell terminologisch aktualisieren.
+  const consistencyQuiz = quizItems.find((item) => item.querySelector('summary')?.textContent.includes('Konsistenzmodell'));
+  if (consistencyQuiz) {
+    const answer = consistencyQuiz.querySelector('p');
+    if (answer) answer.textContent = 'Grawe-Kernmodell: vier Grundbedürfnisse → individuelle motivationale Schemata/Ziele → Annäherung und Vermeidung. Diskordanz liegt vor, wenn gleichzeitig aktivierte motivationale Tendenzen sich blockieren; Inkongruenz, wenn aktivierte Ziele und wahrgenommene Realität nicht übereinstimmen. Verhalten kann als Versuch verstanden werden, Bedürfnisbefriedigung zu erreichen oder Bedürfnisverletzungen zu vermeiden.';
+  }
+
   // Suche: fehlertolerant und per Tastatur erreichbar.
   const filter = () => {
     if (!search) return;
@@ -163,10 +205,8 @@
     window.setTimeout(() => item.classList.remove('flash'), 1400);
   });
 
-  // Querverlinkung bleibt auch für den bisherigen HTML-Bestand verfügbar.
+  // Querverlinkung zur Schwerpunktseite.
   const sisterHref = 'internalisierendes-verhalten.html';
-  const internalisingCard = [...document.querySelectorAll('.behavior-types article')]
-    .find((card) => card.querySelector('h3')?.textContent.trim() === 'Internalisierend');
   if (internalisingCard && !internalisingCard.querySelector(`a[href="${sisterHref}"]`)) {
     const link = document.createElement('a');
     link.className = 'button small card-link';
