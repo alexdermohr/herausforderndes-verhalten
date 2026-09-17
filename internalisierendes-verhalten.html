@@ -15,8 +15,7 @@
     .theory-step strong{display:block;font-size:1.02rem;margin-bottom:.35rem}.theory-step span{font-size:.92rem}.theory-arrow{align-self:center;font-size:1.5rem;font-weight:800}
     .lens-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.lens-grid>*{height:100%}
     .two-track{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.two-track>*{height:100%}
-    .signal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-    .signal-grid ul{margin-bottom:0}
+    .signal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.signal-grid ul{margin-bottom:0}
     .axis-table{width:100%;border-collapse:collapse;margin-top:1rem}.axis-table th,.axis-table td{text-align:left;vertical-align:top;padding:.8rem;border-bottom:1px solid var(--line)}.axis-table th{font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
     .loop{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.55rem;align-items:stretch;margin:1rem 0}.loop>div{border:1px solid var(--line);border-radius:.85rem;padding:.75rem;background:var(--surface);font-size:.92rem}.loop>div:not(:last-child)::after{content:'→';float:right;font-weight:900;margin-left:.35rem}
     .question-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.question-grid .card{height:100%}
@@ -24,9 +23,12 @@
     .example-chain{display:grid;gap:.7rem}.example-chain>div{border-left:4px solid currentColor;padding:.65rem .9rem;background:var(--surface);border-radius:.45rem}
     .source-split{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
     .compare-mini{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.compare-mini>*{height:100%}
-    .thesis{font-size:1.12rem;line-height:1.65}
-    .sister-footer-links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
-    @media (max-width:1000px){.theory-flow{grid-template-columns:1fr}.theory-arrow{transform:rotate(90deg);justify-self:center}.lens-grid,.signal-grid,.source-split{grid-template-columns:1fr}.loop{grid-template-columns:1fr}.loop>div:not(:last-child)::after{content:'↓'}}
+    .thesis{font-size:1.12rem;line-height:1.65}.sister-footer-links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+    .term-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}.term-grid .card{height:100%}
+    .grawe-stack{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin:1rem 0}.grawe-stack>div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem}.grawe-stack strong{display:block;margin-bottom:.35rem}
+    .formula{font-weight:800;font-size:1.03rem;background:var(--surface-2);border-radius:12px;padding:.9rem 1rem;margin:.8rem 0}
+    .web-source{font-size:.9rem;color:var(--muted)}
+    @media (max-width:1000px){.theory-flow{grid-template-columns:1fr}.theory-arrow{transform:rotate(90deg);justify-self:center}.lens-grid,.signal-grid,.source-split,.term-grid,.grawe-stack{grid-template-columns:1fr}.loop{grid-template-columns:1fr}.loop>div:not(:last-child)::after{content:'↓'}}
     @media (max-width:760px){.two-track,.question-grid,.check-grid,.compare-mini{grid-template-columns:1fr}.axis-table{font-size:.92rem}}
   </style>
 </head>
@@ -37,7 +39,7 @@
   <h1>Internalisierendes Verhalten</h1>
   <p class="lead">Unsichtbare Belastung erkennen, ohne ruhiges Verhalten zu pathologisieren; Schutzfunktion verstehen, Beziehung und sichere Teilhabe ermöglichen.</p>
   <div class="hero-actions sister-nav"><a class="button primary" href="#erkennen">Lernstart: Erkennen</a><a class="button" href="index.html">← Hauptseite</a></div>
-  <p class="source-note">Grawe über den Nollau-Auszug · Schmieder als systemischer Fachtext · Erikson als Lehrbuchscan · Synthesen und Praxisableitungen sind gekennzeichnet</p>
+  <p class="source-note">Unterrichtsmaterialien + fachliche Präzisierung der Grawe-Begriffe über Grosse Holtforth &amp; Grawe (2004) sowie den aktuellen Wikipedia-Artikel · Synthesen und Praxisableitungen sind gekennzeichnet</p>
 </div><div class="core-card"><span class="core-label">HUMK</span><strong>Internalisierend heißt: Belastung wird überwiegend nach innen verarbeitet und kann deshalb wenig äußere Störung verursachen.</strong><p>Rückzug oder Anpassung sind Hinweise, aber kein Beweis. Kontext, Dauer, Belastung, Funktion und die Perspektive des Kindes entscheiden über eine tragfähige Arbeitshypothese.</p></div></div></header>
 
 <nav class="topnav"><div class="wrap nav-inner"><a href="index.html">Hauptseite</a><a href="#erkennen">Erkennen</a><a href="#dynamik">Dynamik</a><a href="#modell">Drei Theorien</a><a href="#grawe">Grawe</a><a href="#schmieder">Schmieder</a><a href="#erikson">Erikson</a><a href="#handeln">Handeln</a><a href="#musterhypothese">Musterhypothese</a><a href="#klausur">Klausur</a><a href="#grenzen">Grenzen</a></div></nav>
@@ -54,43 +56,80 @@
 <article class="card"><span class="evidence-badge evidence-synthesis">Plausible Synthese</span><h3>Als Arbeitshypothese prüfen</h3><ul><li>wenig Beteiligung oder Schweigen</li><li>Konfliktscheu</li><li>Selbstzweifel</li><li>Perfektionismus oder übermäßige Leistungsorientierung</li><li>starke Fehlerempfindlichkeit</li></ul></article>
 <article class="card"><span class="evidence-badge evidence-practice">Nicht als Kategorie belegt</span><h3>Begleitende Hinweise</h3><ul><li>gesenkter Blick oder körperliche Anspannung</li><li>Erstarren / Freeze als mögliche Schutzreaktion</li><li>Kopf- oder Bauchschmerzen als mögliche körperliche Signale</li></ul><p class="muted">Freeze sowie Kopf-/Bauchschmerzen kommen im Material vor, werden dort aber nicht automatisch als „internalisierend“ klassifiziert. Blick- und Körpersignale sind Praxisindikatoren, keine Aussage der drei Theorietexte.</p></article>
 </div>
-<aside class="notice"><strong>Wahrhaftigkeitsprüfung:</strong> Gegenthese: „Rückzug und geringe Beteiligung beweisen internalisierendes Verhalten.“ – Falsch. Sie sind mögliche Hinweise; erst Kontext, Dauer, Belastung, Funktion und Perspektive des Kindes begründen eine Arbeitshypothese.</aside>
+<aside class="notice"><strong>Wahrhaftigkeitsprüfung:</strong> Rückzug und geringe Beteiligung beweisen kein internalisierendes Verhalten. Erst Kontext, Dauer, Belastung, Funktion und Perspektive des Kindes begründen eine Arbeitshypothese.</aside>
 </section>
 
 <section id="dynamik" class="section"><div class="section-head"><p class="eyebrow">2 · Typische Dynamik</p><h2>Kurzfristiger Schutz – langfristiges Risiko</h2></div>
 <div class="loop"><div>innere Belastung</div><div>Rückzug oder Überanpassung</div><div>Kind stört wenig</div><div>Belastung wird leichter übersehen</div><div>Unterstützung bleibt möglicherweise aus</div><div>Muster kann sich verstärken</div></div>
-<div class="two-track">
-<article class="panel"><span class="evidence-badge evidence-synthesis">Doppelcharakter</span><h3>Kurzfristig funktional</h3><p>Rückzug, Schweigen oder Anpassung können Ablehnung, Überforderung, Konflikt, Bloßstellung oder Kontrollverlust kurzfristig unwahrscheinlicher machen und Spannung reduzieren.</p></article>
-<article class="panel"><span class="evidence-badge evidence-synthesis">Doppelcharakter</span><h3>Langfristig belastend</h3><p>Dasselbe Muster kann Teilhabe, Kompetenz- und Selbstwirksamkeitserfahrungen sowie das Wahrgenommenwerden von Unterstützungsbedarf erschweren.</p></article>
-</div>
+<div class="two-track"><article class="panel"><span class="evidence-badge evidence-synthesis">Doppelcharakter</span><h3>Kurzfristig funktional</h3><p>Rückzug, Schweigen oder Anpassung können Ablehnung, Überforderung, Konflikt, Bloßstellung oder Kontrollverlust kurzfristig unwahrscheinlicher machen und Spannung reduzieren.</p></article><article class="panel"><span class="evidence-badge evidence-synthesis">Doppelcharakter</span><h3>Langfristig belastend</h3><p>Dasselbe Muster kann Teilhabe, Kompetenz- und Selbstwirksamkeitserfahrungen sowie das Wahrgenommenwerden von Unterstützungsbedarf erschweren.</p></article></div>
 </section>
 
 <section id="modell" class="section"><div class="section-head"><p class="eyebrow">3 · Integriertes Denkmodell</p><h2>Erikson → Grawe → Strategie → Schmieder</h2></div>
 <div class="theory-flow" aria-label="Erikson Grawe internalisierendes Verhalten Schmieder">
   <div class="theory-step"><strong>Erikson · Entwicklungsaufgabe</strong><span>Was steht entwicklungsbezogen auf dem Spiel?</span></div><div class="theory-arrow">→</div>
-  <div class="theory-step"><strong>Grawe · Bedürfnis / Inkongruenz</strong><span>Welche Spannung könnte zwischen Bedürfnissen und Umwelt entstehen?</span></div><div class="theory-arrow">→</div>
+  <div class="theory-step"><strong>Grawe · Ziele / Konsistenz</strong><span>Welche motivationalen Ziele werden verfolgt – und wo entstehen Diskordanz oder Inkongruenz?</span></div><div class="theory-arrow">→</div>
   <div class="theory-step"><strong>Internalisierende Strategie</strong><span>Rückzug · Hemmung · Vermeidung · Überanpassung · Leistung als Schutz?</span></div><div class="theory-arrow">→</div>
   <div class="theory-step"><strong>Schmieder · Rückkopplung</strong><span>Wie reagieren andere – und was stabilisiert oder verändert das Muster?</span></div>
 </div>
 <aside class="notice"><strong>Merksatz:</strong> Erikson liefert die Entwicklungsachse, Grawe die Regulationsachse, Schmieder die Beziehungs- und Kontextachse. Keines der Modelle beweist allein die Ursache eines konkreten Verhaltens.</aside>
 </section>
 
-<section id="grawe" class="section"><div class="section-head"><p class="eyebrow">4 · Grawe im Nollau-Auszug</p><h2>Bedürfnisinkongruenz und Spannungsregulation</h2></div>
+<section id="grawe" class="section"><div class="section-head"><p class="eyebrow">4 · Grawe präzisiert</p><h2>Konsistenz, motivationale Schemata, Diskordanz und Inkongruenz</h2><p>Das Unterrichtsmaterial arbeitet mit einer pädagogischen Adaption des Grawe-Modells. Für die Klausur ist es hilfreich, diese Adaption von Grawes ursprünglicher Theorie zu unterscheiden.</p></div>
+
 <div class="two-track">
-<article class="panel"><span class="evidence-badge evidence-direct">Direkt belegt</span><h3>Grundbedürfnisse</h3><ul><li>Bindung und Zugehörigkeit</li><li>Orientierung und Kontrolle</li><li>Autonomie und Selbstbestimmung</li><li>Kompetenz und Selbstwirksamkeit</li><li>Selbstwerterhöhung und Selbstwertschutz</li><li>Lustgewinn und Unlustvermeidung</li></ul></article>
-<article class="panel"><span class="evidence-badge evidence-direct">Direkt belegt</span><h3>Regulationslogik</h3><p>Wenn Bedürfnisse und Umweltanforderungen nicht gut zusammenpassen, entsteht Spannung. Motivation richtet sich auf Annäherung oder Vermeidung. Reduziert ein Verhalten zuverlässig Spannung, kann es sich als Bewältigungsmuster stabilisieren.</p></article>
+<article class="panel"><span class="evidence-badge evidence-direct">Grawe / Grosse Holtforth &amp; Grawe</span><h3>Vier originäre psychische Grundbedürfnisse</h3><ul><li>Bindung und Anschluss</li><li>Orientierung und Kontrolle</li><li>Selbstwerterhöhung und Selbstwertschutz</li><li>Lustgewinn und Unlustvermeidung</li></ul><p>Die Bedürfnisse stehen gleichwertig nebeneinander; Grawe ordnet sie nicht als Hierarchie.</p></article>
+<article class="panel"><span class="evidence-badge evidence-direct">Unterrichtsmaterial / Nollau-Adaption</span><h3>Pädagogisch erweitert</h3><p>Im Unterrichtsmaterial werden zusätzlich bzw. ausdifferenziert unter anderem <strong>Autonomie</strong> sowie <strong>Kompetenz/Selbstwirksamkeit</strong> als Analysebedürfnisse geführt. Diese Erweiterung ist für eure Fallanalyse sinnvoll, sollte aber nicht als Grawes ursprüngliche Vierer-Liste ausgegeben werden.</p></article>
 </div>
+
+<h3 class="subhead">Vier Ebenen im funktionalen Modell</h3>
+<div class="grawe-stack">
+<div><strong>1 · Selbstsystem</strong><span>Übergeordnete Ebene; Grundprinzip ist das Streben nach Konsistenz gleichzeitig ablaufender psychischer Prozesse.</span></div>
+<div><strong>2 · Grundbedürfnisse</strong><span>Die vier universellen Bedürfnisse bilden die nächste Ebene.</span></div>
+<div><strong>3 · Motivationale Schemata</strong><span>Individuell gelernte Ziele und Mittel, um Bedürfnisse zu befriedigen oder vor Verletzung zu schützen.</span></div>
+<div><strong>4 · Erleben &amp; Verhalten</strong><span>Konkretes Handeln und Erleben in einer Situation.</span></div>
+</div>
+<aside class="notice"><strong>Zur Grafik aus dem Unterricht:</strong> Das dortige Kästchen „System“ lässt sich mit der Grawe-nahen Primärliteratur nun genauer einordnen: Im funktionalen Modell wird auf oberster Ebene das <strong>Selbstsystem</strong> beschrieben. Gemeint ist also nicht die Klasse oder Familie als soziales System, sondern die übergeordnete Organisation des psychischen Geschehens.</aside>
+
+<h3 class="subhead">Motivationale Schemata: Annäherung und Vermeidung</h3>
+<div class="two-track">
+<article class="panel"><h3>Annäherungsschema</h3><p>Individuelle Ziele und Strategien, die bedürfnisbefriedigende Erfahrungen herbeiführen sollen.</p><div class="formula">„Ich möchte dazugehören, mich beteiligen und Kompetenz erleben.“</div></article>
+<article class="panel"><h3>Vermeidungsschema</h3><p>Individuelle Ziele und Strategien, die erneute Verletzung, Bedrohung oder Enttäuschung eines Grundbedürfnisses verhindern sollen.</p><div class="formula">„Ich darf mich nicht blamieren oder abgelehnt werden.“</div></article>
+</div>
+<p class="muted">Wichtig: Vermeidung ist bei Grawe nicht einfach das Gegenteil von Annäherung. Beide Regulationsrichtungen können gleichzeitig aktiviert sein.</p>
+
+<h3 class="subhead">Die drei Begriffe für die Klausur</h3>
+<div class="term-grid">
+<article class="card"><span class="evidence-badge evidence-direct">Oberbegriff</span><h3>Inkonsistenz</h3><p>Gleichzeitig ablaufende psychische Prozesse sind nicht ausreichend miteinander vereinbar oder aufeinander abgestimmt. Diskordanz und Inkongruenz sind zwei besonders wichtige Formen davon.</p></article>
+<article class="card"><span class="evidence-badge evidence-direct">Ziel ↔ Ziel</span><h3>Diskordanz</h3><p>Zwei oder mehrere gleichzeitig aktivierte motivationale Tendenzen sind so unvereinbar, dass sie sich gegenseitig behindern. Beispiel: <em>„Ich will mich beteiligen“</em> und gleichzeitig <em>„Ich darf auf keinen Fall negativ auffallen“</em>.</p></article>
+<article class="card"><span class="evidence-badge evidence-direct">Ziel ↔ Realität</span><h3>Inkongruenz</h3><p>Aktivierte motivationale Ziele werden in der wahrgenommenen Realität nicht erreicht. Beispiel: <em>„Ich möchte mich kompetent beteiligen“</em>, erlebe mich aber als zurückgezogen und handlungsunsicher.</p></article>
+</div>
+<div class="quote-card"><strong>Prüfungsformel:</strong> Ziel gegen Ziel = <strong>Diskordanz</strong>. Ziel gegen wahrgenommene Realität = <strong>Inkongruenz</strong>. Beides gehört zur <strong>Inkonsistenz</strong>.</div>
+
+<h3 class="subhead">Warum ist das für internalisierendes Verhalten so ergiebig?</h3>
+<div class="example-chain">
+<div><strong>Grundbedürfnis:</strong> z. B. Bindung, Kontrolle oder Selbstwertschutz.</div>
+<div><strong>Annäherungsziel:</strong> „Ich möchte dazugehören, mich zeigen und Kompetenz erleben.“</div>
+<div><strong>Vermeidungsziel:</strong> „Ich möchte Beschämung, Ablehnung oder Kontrollverlust verhindern.“</div>
+<div><strong>Diskordanz:</strong> Beide Ziele sind gleichzeitig aktiv und können sich gegenseitig blockieren.</div>
+<div><strong>Internalisierende Strategie:</strong> Rückzug, Schweigen, Überanpassung oder perfektes Funktionieren können das Vermeidungsziel kurzfristig bedienen.</div>
+<div><strong>Inkongruenz:</strong> Annäherungsziele wie Beteiligung, Zugehörigkeit oder Selbstwirksamkeit bleiben möglicherweise unerfüllt.</div>
+</div>
+<aside class="notice"><strong>Theoretische Pointe:</strong> Ein Rückzug kann kurzfristig funktional sein, weil er eine drohende Bedürfnisverletzung vermeidet. Gleichzeitig kann er langfristig Inkongruenz aufrechterhalten, wenn wichtige Annäherungsziele nicht erreicht werden. Das ist eine Anwendung der Grawe-Begriffe auf internalisierendes Verhalten, keine von Grawe formulierte Definition von „internalisierend“.</aside>
+
 <h3 class="subhead">Für internalisierendes Verhalten besonders prüfenswert</h3>
 <div class="lens-grid">
-<article class="card"><span class="evidence-badge evidence-synthesis">Hypothese</span><h3>Bindung / Zugehörigkeit</h3><p>Kontakt wird gewünscht, aber mögliche Ablehnung oder fehlende verlässliche Beziehung macht Sichtbarkeit riskant.</p></article>
-<article class="card"><span class="evidence-badge evidence-synthesis">Hypothese</span><h3>Orientierung / Kontrolle</h3><p>Unvorhersehbare oder sozial unübersichtliche Situationen erhöhen Spannung; Rückzug oder Abwarten schafft kurzfristig mehr Kontrolle.</p></article>
-<article class="card"><span class="evidence-badge evidence-synthesis">Hypothese</span><h3>Selbstwertschutz</h3><p>Fehler, Kritik oder Bloßstellung werden vermieden. Nicht-Handeln oder perfekte Leistung können beide dieselbe Schutzfunktion erfüllen.</p></article>
-<article class="card"><span class="evidence-badge evidence-synthesis">Hypothese</span><h3>Unlustvermeidung</h3><p>Belastende Erfahrungen werden vermieden oder verkleinert; das kann kurzfristig entlasten und langfristig Teilhabe einschränken.</p></article>
-<article class="card"><span class="evidence-badge evidence-synthesis">Hypothese</span><h3>Autonomie</h3><p>Eigene Entscheidungen oder ein Nein können subjektiv konflikthaft sein; starke Anpassung kann dann Beziehung oder Sicherheit schützen.</p></article>
-<article class="card"><span class="evidence-badge evidence-synthesis">Hypothese</span><h3>Kompetenz / Selbstwirksamkeit</h3><p>Wer sich nur dort beteiligt, wo Erfolg sehr wahrscheinlich ist, schützt möglicherweise den Selbstwert, begrenzt aber neue Kompetenz- und Selbstwirksamkeitserfahrungen.</p></article>
+<article class="card"><span class="evidence-badge evidence-direct">Grawe</span><h3>Bindung / Anschluss</h3><p>Kontakt wird angestrebt, mögliche Ablehnung oder Verlust wichtiger Beziehungen kann aber starke Vermeidungsziele aktivieren.</p></article>
+<article class="card"><span class="evidence-badge evidence-direct">Grawe</span><h3>Orientierung / Kontrolle</h3><p>Unvorhersehbare oder sozial unübersichtliche Situationen können Kontrollziele frustrieren; Rückzug oder starkes Vorbereiten kann als Schutzstrategie geprüft werden.</p></article>
+<article class="card"><span class="evidence-badge evidence-direct">Grawe</span><h3>Selbstwertschutz</h3><p>Fehler, Kritik oder Bloßstellung können Vermeidungsziele aktivieren. Nicht-Handeln oder perfekte Leistung können als mögliche Schutzstrategien geprüft werden.</p></article>
+<article class="card"><span class="evidence-badge evidence-direct">Grawe</span><h3>Unlustvermeidung</h3><p>Belastende Erfahrungen werden vermieden oder verkleinert. Kurzfristige Entlastung kann das Vermeidungsverhalten attraktiv machen.</p></article>
+<article class="card"><span class="evidence-badge evidence-synthesis">Nollau-Adaption</span><h3>Autonomie</h3><p>Eigene Entscheidungen oder ein Nein können subjektiv konflikthaft sein; starke Anpassung kann Beziehung oder Sicherheit schützen.</p></article>
+<article class="card"><span class="evidence-badge evidence-synthesis">Nollau-Adaption</span><h3>Kompetenz / Selbstwirksamkeit</h3><p>Wer sich nur dort beteiligt, wo Erfolg sehr wahrscheinlich ist, schützt möglicherweise den Selbstwert, begrenzt aber neue Kompetenz- und Selbstwirksamkeitserfahrungen.</p></article>
 </div>
+
 <h3 class="subhead">Leistung als Schutzstrategie?</h3>
-<div class="quote-card"><span class="evidence-badge evidence-synthesis">Nicht direkt im Material</span><strong>Perfektionismus und übermäßige Leistungsorientierung können als Arbeitshypothese relevant sein.</strong><br>Ein Kind könnte Unsicherheit über sehr gute Leistung regulieren: Anerkennung stabilisiert den Selbstwert, Fehler oder ausbleibende Anerkennung werden dadurch besonders bedrohlich. Das ist eine theoretische Synthese aus Grawe und Erikson – kein Quellenbefund und keine Diagnose.</div>
+<div class="quote-card"><span class="evidence-badge evidence-synthesis">Anwendung auf Internalisierung</span><strong>Perfektionismus und übermäßige Leistungsorientierung können als Vermeidungsstrategie geprüft werden.</strong><br>Ein Kind könnte ein Annäherungsziel wie Anerkennung oder Kompetenz verfolgen und zugleich ein starkes Vermeidungsziel entwickeln, Fehler, Beschämung oder Selbstwertverletzung zu verhindern. Wenn beide Tendenzen sich gegenseitig blockieren, wäre der präzisere Grawe-Begriff <strong>Diskordanz</strong>.</div>
+
+<aside class="notice web-source"><strong>Web-Präzisierung, geprüft am 17.09.2026:</strong> Der aktuelle deutschsprachige Wikipedia-Artikel fasst die vier Grundbedürfnisse, motivationale Schemata, Annäherungs-/Vermeidungsschemata sowie Diskordanz und Inkongruenz zusammen. Die zentralen Begriffsdefinitionen wurden zusätzlich gegen Grosse Holtforth &amp; Grawe (2004), <em>Inkongruenz und Fallkonzeption in der Psychologischen Therapie</em>, geprüft. Wikipedia dient hier als Sekundärquelle, nicht als alleinige Autorität. · <a href="https://de.wikipedia.org/wiki/Konsistenztheorie_von_Klaus_Grawe">Wikipedia</a> · <a href="https://www.researchgate.net/publication/215549113_Inkongruenz_und_Fallkonzeption_in_der_Psychologischen_Therapie">Grosse Holtforth &amp; Grawe 2004</a></aside>
 </section>
 
 <section id="schmieder" class="section"><div class="section-head"><p class="eyebrow">5 · Schmieder</p><h2>Acht Fragen gegen das Übersehen</h2></div>
@@ -115,10 +154,7 @@
 <article class="panel"><span class="evidence-badge evidence-direct">Bei Jugendlichen primär</span><h3>Identität ↔ Rollenkonfusion</h3><ul><li>Wer bin ich?</li><li>Wie sehen mich andere?</li><li>Wo gehöre ich hin?</li><li>Welche Rolle darf ich in der Gruppe einnehmen?</li></ul><p>Als Synthese lässt sich prüfen, ob starke Orientierung an Erwartungen anderer mit wenig sichtbaren eigenen Positionen zusammenhängt.</p></article>
 <article class="panel"><span class="evidence-badge evidence-direct">Vorherige Stufe bleibt anschlussfähig</span><h3>Werksinn / Leistung ↔ Minderwertigkeit</h3><p>Kompetenz und Anerkennung werden über das Bewältigen von Aufgaben bedeutsam. Als Synthese kann geprüft werden, ob Unsicherheit fast ausschließlich durch Leistung kompensiert wird und Fehler dadurch unmittelbar den Selbstwert bedrohen.</p></article>
 </div>
-<table class="axis-table">
-<thead><tr><th>Weitere Erikson-Achse</th><th>Mögliche Fallfrage · Synthese</th></tr></thead>
-<tbody><tr><td><strong>Autonomie ↔ Scham/Zweifel</strong></td><td>Wie riskant ist es für das Kind, selbst zu entscheiden, Nein zu sagen oder einen Fehler zu machen?</td></tr><tr><td><strong>Initiative ↔ Schuldgefühl</strong></td><td>Wie leicht kann das Kind eigene Wünsche, Ideen und Vorhaben zeigen, ohne Schuld oder Konflikt zu erwarten?</td></tr></tbody>
-</table>
+<table class="axis-table"><thead><tr><th>Weitere Erikson-Achse</th><th>Mögliche Fallfrage · Synthese</th></tr></thead><tbody><tr><td><strong>Autonomie ↔ Scham/Zweifel</strong></td><td>Wie riskant ist es für das Kind, selbst zu entscheiden, Nein zu sagen oder einen Fehler zu machen?</td></tr><tr><td><strong>Initiative ↔ Schuldgefühl</strong></td><td>Wie leicht kann das Kind eigene Wünsche, Ideen und Vorhaben zeigen, ohne Schuld oder Konflikt zu erwarten?</td></tr></tbody></table>
 <aside class="notice"><strong>Fehlt:</strong> das genaue Alter des Fallkindes. Deshalb ist „Identität ↔ Rollenkonfusion“ nur dann vorrangig, wenn tatsächlich Jugendalter vorliegt.</aside>
 </section>
 
@@ -131,10 +167,10 @@
 </section>
 
 <section id="musterhypothese" class="section"><div class="section-head"><p class="eyebrow">8 · Angepasste Musterhypothese</p><h2>So könnte eine Klausurhypothese klingen</h2></div>
-<div class="case-card"><span class="case-label">Formulierungsbaustein · Synthese</span><p class="thesis">Wenn das Kind in lauten, unübersichtlichen oder bewertenden Situationen kaum spricht und sich zurückzieht, könnte dieses Verhalten dazu dienen, Überforderung zu reduzieren sowie Kontrolle und Selbstwert zu schützen. Da das Kind den Ablauf nicht sichtbar stört, wird seine Belastung möglicherweise wenig wahrgenommen, wodurch das Muster unbeabsichtigt stabilisiert wird. Zu überprüfen wäre, ob das Verhalten in überschaubaren, vertrauten oder weniger öffentlich bewertenden Situationen seltener auftritt. Pädagogisch wären eine verlässliche Beziehung, vorhersehbare Abläufe und niedrigschwellige Beteiligungsmöglichkeiten zu prüfen.</p></div>
+<div class="case-card"><span class="case-label">Formulierungsbaustein · Synthese</span><p class="thesis">Wenn das Kind in lauten, unübersichtlichen oder bewertenden Situationen kaum spricht und sich zurückzieht, könnte gleichzeitig ein Annäherungsziel nach Zugehörigkeit oder Kompetenzerleben und ein Vermeidungsziel zum Schutz vor Beschämung, Ablehnung oder Kontrollverlust aktiviert sein. Diese mögliche <strong>Diskordanz</strong> könnte Rückzug begünstigen. Der Rückzug kann kurzfristig das Vermeidungsziel erfüllen, während Annäherungsziele wie Beteiligung und Selbstwirksamkeit unerfüllt bleiben; dadurch kann <strong>Inkongruenz</strong> fortbestehen. Systemisch wäre zusätzlich zu prüfen, ob die geringe äußere Störung dazu führt, dass die Belastung wenig wahrgenommen und das Muster unbeabsichtigt stabilisiert wird.</p></div>
 <div class="example-chain">
 <div><strong>Beobachtung:</strong> Was passiert konkret – wann, wo, mit wem?</div>
-<div><strong>Grawe:</strong> Welche Bedürfnisse oder Spannungen könnten betroffen sein?</div>
+<div><strong>Grawe:</strong> Grundbedürfnis → motivationales Ziel/Schemata → Diskordanz? → Inkongruenz? → Funktion des Verhaltens.</div>
 <div><strong>Schmieder:</strong> Welche Reaktionen und Rahmenbedingungen stabilisieren oder verändern das Muster?</div>
 <div><strong>Erikson:</strong> Welche Entwicklungsaufgabe könnte altersbezogen berührt sein?</div>
 <div><strong>Prüfung:</strong> Welche Ausnahmen würden die Hypothese stützen oder widerlegen?</div>
@@ -150,7 +186,7 @@
 <li><div><strong>Beobachtung.</strong><p>Konkretes Verhalten, Situation, Dauer und Belastung beschreiben – keine Identitätsdiagnose.</p></div></li>
 <li><div><strong>Einordnung.</strong><p>Welche materialgestützten Merkmale sprechen für eine internalisierende Verhaltensrichtung? Was spricht dagegen?</p></div></li>
 <li><div><strong>Erikson.</strong><p>Welche altersbezogene Entwicklungsaufgabe könnte berührt sein?</p></div></li>
-<li><div><strong>Grawe.</strong><p>Welche Bedürfnisinkongruenz oder Spannungsregulation könnte relevant sein?</p></div></li>
+<li><div><strong>Grawe.</strong><p>Welche Grundbedürfnisse und motivationalen Ziele sind relevant? Gibt es Zielkonflikte (Diskordanz) oder eine Diskrepanz zwischen Ziel und wahrgenommener Realität (Inkongruenz)? Welche Funktion könnte das Verhalten dabei erfüllen?</p></div></li>
 <li><div><strong>Schmieder.</strong><p>Welche Beziehungen, Erwartungen, Beobachterdeutungen und institutionellen Bedingungen wirken mit?</p></div></li>
 <li><div><strong>Doppelcharakter.</strong><p>Wovor schützt das Verhalten möglicherweise kurzfristig – und was erschwert es langfristig?</p></div></li>
 <li><div><strong>Ausnahmen.</strong><p>Wann zeigt sich mehr Kontakt, Beteiligung, Widerspruch oder Selbstwirksamkeit?</p></div></li>
@@ -159,25 +195,26 @@
 </ol>
 <h3 class="subhead">Kurzfragen</h3>
 <div class="quiz-list">
-<details class="quiz-item"><summary>1. Warum kann ein leistungsstarkes Kind trotzdem internalisierend belastet sein?</summary><p>Weil geringe äußere Störung oder gute Leistung keine Aussage über innere Belastung erlauben. Als Hypothese kann Leistung sogar dem Selbstwertschutz oder der Kontrolle dienen.</p></details>
-<details class="quiz-item"><summary>2. Was ist der Doppelcharakter internalisierender Strategien?</summary><p>Sie können kurzfristig Spannung, Konflikt oder Beschämungsrisiko reduzieren und langfristig Teilhabe, Unterstützung und Selbstwirksamkeit erschweren.</p></details>
-<details class="quiz-item"><summary>3. Was bringt Grawe?</summary><p>Ein Raster für Grundbedürfnisse, Inkongruenz, Annäherung/Vermeidung und mögliche Spannungsregulation.</p></details>
-<details class="quiz-item"><summary>4. Was bringt Schmieder?</summary><p>Den Blick auf Sinn, Kontext, Beobachter, Wechselwirkungen, Zirkularität, Ressourcen und mögliche systemische Aufrechterhaltung.</p></details>
-<details class="quiz-item"><summary>5. Was bringt Erikson bei Jugendlichen?</summary><p>Vor allem die Frage nach Identität und Rollenkonfusion; die vorherige Achse Werksinn/Leistung versus Minderwertigkeit kann für Leistungs- und Selbstwertdynamiken weiter relevant sein.</p></details>
-<details class="quiz-item"><summary>6. Was ist die wichtigste Wahrhaftigkeitsregel?</summary><p>Rückzug, Schweigen, Perfektionismus oder geringe Beteiligung sind keine Beweise. Sie werden erst durch Kontext, Belastung, Funktion, Dauer, Ausnahmen und die Perspektive des Kindes zu einer prüfbaren Arbeitshypothese.</p></details>
+<details class="quiz-item"><summary>1. Welche vier Grundbedürfnisse nennt Grawe ursprünglich?</summary><p>Bindung/Anschluss, Orientierung/Kontrolle, Selbstwerterhöhung/-schutz sowie Lustgewinn/Unlustvermeidung.</p></details>
+<details class="quiz-item"><summary>2. Was sind motivationale Schemata?</summary><p>Individuell entwickelte Ziele und Mittel, mit denen eine Person Grundbedürfnisse befriedigen oder vor erneuter Verletzung schützen will.</p></details>
+<details class="quiz-item"><summary>3. Diskordanz oder Inkongruenz – was ist der Unterschied?</summary><p>Diskordanz: gleichzeitig aktivierte motivationale Tendenzen blockieren sich gegenseitig. Inkongruenz: wahrgenommene Realität stimmt nicht mit einem aktivierten motivationalen Ziel überein.</p></details>
+<details class="quiz-item"><summary>4. Warum kann Rückzug nach Grawe kurzfristig funktional sein?</summary><p>Er kann ein Vermeidungsziel erfüllen, etwa Beschämung oder Ablehnung verhindern. Gleichzeitig können Annäherungsziele unerfüllt bleiben und damit Inkongruenz bestehen.</p></details>
+<details class="quiz-item"><summary>5. Was bringt Schmieder?</summary><p>Den Blick auf Sinn, Kontext, Beobachter, Wechselwirkungen, Zirkularität, Ressourcen und mögliche systemische Aufrechterhaltung.</p></details>
+<details class="quiz-item"><summary>6. Was bringt Erikson bei Jugendlichen?</summary><p>Vor allem die Frage nach Identität und Rollenkonfusion; die vorherige Achse Werksinn/Leistung versus Minderwertigkeit kann für Leistungs- und Selbstwertdynamiken weiter relevant sein.</p></details>
+<details class="quiz-item"><summary>7. Was ist die wichtigste Wahrhaftigkeitsregel?</summary><p>Rückzug, Schweigen, Perfektionismus oder geringe Beteiligung sind keine Beweise. Sie werden erst durch Kontext, Belastung, Funktion, Dauer, Ausnahmen und die Perspektive des Kindes zu einer prüfbaren Arbeitshypothese.</p></details>
 </div>
 </section>
 
-<section id="grenzen" class="section"><div class="section-head"><p class="eyebrow">11 · Erkenntnisgrenzen</p><h2>Belegt, plausibel, Praxisableitung</h2></div>
+<section id="grenzen" class="section"><div class="section-head"><p class="eyebrow">11 · Erkenntnisgrenzen</p><h2>Belegt, präzisiert, plausibel, Praxisableitung</h2></div>
 <div class="source-split">
-<article class="panel"><span class="evidence-badge evidence-direct">Direkt belegt</span><h3>Aus den Materialien</h3><p>Internalisierende Erscheinungsformen; Grawes Grundbedürfnisse und Spannungsregulation im Nollau-Auszug; Eriksons psychosoziale Konfliktstufen; Schmieders systemisch-konstruktivistische Perspektive, „Wozu?“, Zirkularität, Ressourcenorientierung und Selbstreflexion; Freeze sowie Kopf-/Bauchschmerzen als allgemein genannte Phänomene, jedoch nicht automatisch als internalisierend klassifiziert.</p></article>
-<article class="panel"><span class="evidence-badge evidence-synthesis">Plausible Synthese</span><h3>Von dieser Seite entwickelt</h3><p>Unsichtbarkeitsdynamik, Leistungs-/Selbstwertschleife, Perfektionismus als mögliche Schutzstrategie, das Modell Erikson → Grawe → Strategie → Schmieder und die Musterhypothese für bewertende bzw. unübersichtliche Situationen.</p></article>
-<article class="panel"><span class="evidence-badge evidence-practice">Praxisableitung</span><h3>Nicht aus den drei Texten wörtlich ableitbar</h3><p>Gesenkter Blick/körperliche Anspannung als Hinweis, schriftliche oder kleingruppige Beteiligungsformate, Blickkontakt nicht erzwingen und einzelne konkrete Unterrichtsmaßnahmen. Diese Empfehlungen werden deshalb nicht als Originalaussagen der Theoretiker ausgegeben.</p></article>
+<article class="panel"><span class="evidence-badge evidence-direct">Unterrichtsmaterial</span><h3>Direkt belegt</h3><p>Internalisierende Erscheinungsformen; Nollaus Grawe-Adaption; Eriksons psychosoziale Konfliktstufen; Schmieders systemisch-konstruktivistische Perspektive, „Wozu?“, Zirkularität, Ressourcenorientierung und Selbstreflexion; Freeze sowie Kopf-/Bauchschmerzen als allgemein genannte Phänomene.</p></article>
+<article class="panel"><span class="evidence-badge evidence-direct">Web + Grawe-nahe Fachquelle</span><h3>Fachlich präzisiert</h3><p>Vier originäre Grundbedürfnisse, Selbstsystem als oberste Modellebene, motivationale Schemata, Annäherungs- und Vermeidungsschemata sowie die Unterscheidung von Inkonsistenz, Diskordanz und Inkongruenz. Wikipedia wurde als aktuelle Übersicht genutzt; die zentralen Definitionen wurden mit Grosse Holtforth &amp; Grawe (2004) gegengeprüft.</p></article>
+<article class="panel"><span class="evidence-badge evidence-synthesis">Synthese / Praxis</span><h3>Von dieser Seite entwickelt</h3><p>Unsichtbarkeitsdynamik, Leistungs-/Selbstwertschleife, Perfektionismus als mögliche Vermeidungsstrategie, die konkrete Anwendung von Diskordanz und Inkongruenz auf internalisierendes Verhalten sowie schriftliche oder kleingruppige Beteiligungsformate.</p></article>
 </div>
-<aside class="notice"><strong>Nicht belegt:</strong> Eine spezifische Kausalkette oder Diagnose für ein konkretes Kind. Klinische Diagnosekriterien, Prävalenzen und Spezialtherapieprogramme sind nicht Bestandteil dieser Seite.</aside>
-<div class="sister-footer-links"><a class="button primary" href="index.html">← Zur Hauptseite</a><a class="button" href="klausurwissen.md">Vollständige Extraktion</a><a class="button" href="quellen.md">Quellen & Provenienz</a></div>
+<aside class="notice"><strong>Nicht belegt:</strong> Eine spezifische Kausalkette oder Diagnose für ein konkretes Kind. Auch die Grawe-Begriffe liefern keine automatische Einzelfalldiagnose; sie strukturieren prüfbare Hypothesen.</aside>
+<div class="sister-footer-links"><a class="button primary" href="index.html">← Zur Hauptseite</a><a class="button" href="klausurwissen.md">Vollständige Extraktion</a><a class="button" href="quellen.md">Quellen &amp; Provenienz</a><a class="button" href="https://de.wikipedia.org/wiki/Konsistenztheorie_von_Klaus_Grawe">Wikipedia: Grawe</a></div>
 </section>
 </main>
-<footer><div class="wrap footer-inner"><p><strong>Internalisierendes Verhalten – Erkennen · Verstehen · Handeln</strong></p><p>Schwerpunktseite zu „Herausforderndes Verhalten“ · quellenbasierte Theorie + gekennzeichnete Synthesen und Praxisableitungen</p></div></footer>
+<footer><div class="wrap footer-inner"><p><strong>Internalisierendes Verhalten – Erkennen · Verstehen · Handeln</strong></p><p>Schwerpunktseite · Unterrichtsmaterial + gekennzeichnete fachliche Präzisierungen und Praxisableitungen</p></div></footer>
 </body>
 </html>
